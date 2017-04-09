@@ -3,11 +3,11 @@ package tcss450.uw.edu.aboutme;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ToastActivity extends AppCompatActivity {
+public class imageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toast);
+        setContentView(R.layout.activity_image);
     }
 }

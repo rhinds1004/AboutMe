@@ -1,5 +1,6 @@
 package tcss450.uw.edu.aboutme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -47,5 +48,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    /** Called when the user taps the text button */
+    public void sendText(View view){
+        Intent intent = new Intent(this, textActivity.class);
+
+        startActivity(intent);
+
+    }
+
+    /** Called when the user taps the image button */
+    public void sendImage(View view){
+        Intent intent = new Intent(this, imageActivity.class);
+
+        startActivity(intent);
+
     }
 }

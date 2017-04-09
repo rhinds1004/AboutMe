@@ -19,7 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ToastActivity"></activity>
+        <activity android:name=".ToastActivity" />
+        <activity android:name=".textActivity" />
+        <activity android:name=".imageActivity"></activity>
     </application>
 
 </manifest>
