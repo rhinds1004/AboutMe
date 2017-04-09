@@ -1,17 +1,21 @@
 package tcss450.uw.edu.aboutme;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
+
+        import android.app.AlertDialog;
+        import android.content.Context;
+        import android.content.DialogInterface;
+        import android.content.Intent;
+        import android.net.Uri;
+        import android.os.Bundle;
+        import android.support.design.widget.FloatingActionButton;
+        import android.support.design.widget.Snackbar;
+        import android.support.v7.app.AppCompatActivity;
+        import android.support.v7.widget.Toolbar;
+        import android.view.View;
+        import android.view.Menu;
+        import android.view.MenuItem;
+        import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,31 +56,40 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    /** Called when the user taps the text button */
-    public void sendText(View view){
+
+    /**
+     * Called when the user taps the text button
+     */
+    public void sendText(View view) {
         Intent intent = new Intent(this, textActivity.class);
 
         startActivity(intent);
 
     }
 
-    /** Called when the user taps the image button */
-    public void sendImage(View view){
+    /**
+     * Called when the user taps the image button
+     */
+    public void sendImage(View view) {
         Intent intent = new Intent(this, imageActivity.class);
 
         startActivity(intent);
 
     }
 
-    /** Called when the user taps the web button */
-    public void sendWeb(View view){
+    /**
+     * Called when the user taps the web button
+     */
+    public void sendWeb(View view) {
         Uri webpage = Uri.parse("http://developer.android.com/index.html");
         Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
         startActivity(webIntent);
     }
 
-    /** Called when the user taps the toast button */
-    public void sendToast(View view){
+    /**
+     * Called when the user taps the toast button
+     */
+    public void sendToast(View view) {
         Context context = getApplicationContext();
         CharSequence text = "Hello toast!";
         int duration = Toast.LENGTH_SHORT;
@@ -84,4 +97,30 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
     }
+
+    /**
+     * Called when the user taps the dialog button
+     */
+    public void sendDialog(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+// Add the buttons
+        builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+// User clicked OK button
+            }
+        });
+        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+// User cancelled the dialog
+            }
+        });
+// Set other dialog properties
+
+
+// Create the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
 }
