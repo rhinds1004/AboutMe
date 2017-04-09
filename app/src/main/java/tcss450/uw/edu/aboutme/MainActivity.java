@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void sendToast(View view) {
         Context context = getApplicationContext();
-        CharSequence text = "Hello toast!";
+        CharSequence text = "Toast with butter is yummy";
         int duration = Toast.LENGTH_SHORT;
 
         Toast toast = Toast.makeText(context, text, duration);
@@ -103,21 +103,22 @@ public class MainActivity extends AppCompatActivity {
      */
     public void sendDialog(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-// Add the buttons
+        // Add the buttons
         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-// User clicked OK button
+            // User clicked OK button
             }
         });
         builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-// User cancelled the dialog
+            // User cancelled the dialog
             }
         });
-// Set other dialog properties
+        // Set other dialog properties
+        builder.setMessage("Are you sure?")
+        .setTitle("My Dialog");
 
-
-// Create the AlertDialog
+        // Create the AlertDialog
         AlertDialog dialog = builder.create();
         dialog.show();
     }
