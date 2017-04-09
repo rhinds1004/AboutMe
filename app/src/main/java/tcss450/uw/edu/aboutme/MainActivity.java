@@ -1,6 +1,7 @@
 package tcss450.uw.edu.aboutme;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -63,5 +64,12 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
 
+    }
+
+    /** Called when the user taps the web button */
+    public void sendWeb(View view){
+        Uri webpage = Uri.parse("http://developer.android.com/index.html");
+        Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+        startActivity(webIntent);
     }
 }
